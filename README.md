@@ -1,5 +1,7 @@
-# EALIOR_Keyboard
-8-key chorded keyboard for tablets
+# EALIOR Keyboard
+8-key chorded mechanical keyboard for tablets
+
+![Hardware](https://github.com/myak555/EALIOR_Keyboard/blob/main/Hardware/Assembly.png)
 
 This is a much updated version of GKOS keyboard of Seppo Tiainen, 28-Mar-2010, and
 GKOS keyboard of Pavel Travnik, 15-Sep-2019

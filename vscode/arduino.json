@@ -1,0 +1,8 @@
+{
+    "programmer": "AVR ISP",
+    "board": "SparkFun:avr:promicro",
+    "configuration": "cpu=16MHzatmega32U4",
+    "port": "COM4",
+    "sketch": "EALIOR_Keyboard.ino",
+    "output": "../build"
+}

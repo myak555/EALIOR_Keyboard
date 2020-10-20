@@ -28,8 +28,12 @@
 #define _MODE6_                 0x07
 #define _MODE7_                 0x08
 #define _MODE8_                 0x09
-#define _MODE9_                 0x10
-#define _RUSLAT_                0x11
+#define _MODE9_                 0x0A
+#define _RUSLAT_                0x0B
+#define _DELAY_                 0x0C
+#define _DISABLE_               0x0D
+#define _ENABLE_                0x0E
+#define _RELEASE_               0x0F
 
 // stanadard Arduino definitions
 #define _LEFT_CTRL_             0x80

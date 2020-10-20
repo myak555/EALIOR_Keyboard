@@ -131,29 +131,36 @@ void EALIOR_Hardware::_setLEDs(){
 
 void EALIOR_Hardware::kbdPress(char key){
   #ifndef _DISABLE_KEYBOARD
-  _keyboardEnable();
+  kbdEnable();
   Keyboard.press( key);
   #endif
 }
 
 void EALIOR_Hardware::kbdWrite(char key){
   #ifndef _DISABLE_KEYBOARD
-  _keyboardEnable();
+  kbdEnable();
   Keyboard.write( key);
   #endif
 }
 
 void EALIOR_Hardware::kbdPrint(String s){
   #ifndef _DISABLE_KEYBOARD
-  _keyboardEnable();
+  kbdEnable();
   Keyboard.print( s);
   #endif
 }
 
 void EALIOR_Hardware::kbdRelease(char key){
   #ifndef _DISABLE_KEYBOARD
-  _keyboardEnable();
+  kbdEnable();
   Keyboard.release( key);
+  #endif
+}
+
+void EALIOR_Hardware::kbdReleaseAll(){
+  #ifndef _DISABLE_KEYBOARD
+  kbdEnable();
+  Keyboard.releaseAll();
   #endif
 }
 
@@ -188,7 +195,7 @@ void EALIOR_Hardware::checkSleepRequired(){
   _writeLEDs(false, false);
   
   #ifndef _DISABLE_POWERSAVE
-  _keyboardDisable();
+  kbdDisable();
   LowPower.powerDown(SLEEP_500MS, ADC_OFF, BOD_OFF);
   #else
   delay(200);
@@ -214,44 +221,50 @@ void EALIOR_Hardware::_readModeButtons(){
 
 
 void EALIOR_Hardware::_readModeRight(bool modebutton){
-  uint8_t modes[] =
+  const uint8_t modes[] =
       {_SHIFTMODE_LAT_NUMS, _SHIFTMODE_LAT_NUMS, _SHIFTMODE_LAT_NUMS, _SHIFTMODE_LAT_NUMLOCK, _SHIFTMODE_LAT_NORMAL,
        _SHIFTMODE_RUS_NUMS, _SHIFTMODE_RUS_NUMS, _SHIFTMODE_RUS_NUMS, _SHIFTMODE_RUS_NUMLOCK, _SHIFTMODE_RUS_NORMAL};
-  if(modebutton){
-    _lastCommandReceived = millis();
-    _keyboardEnable();
-  }
+  long t = millis();
   if( modebutton && !_rightPressed){
     _rightPressed = true;
     shiftMode = modes[shiftMode];
+    if( t - _lastCommandReceived > DOUBLE_PRESS_TIMEOUT && 
+      (shiftMode % 5) == _SHIFTMODE_LAT_NUMLOCK) shiftMode -= _SHIFTMODE_LAT_NUMLOCK; 
     #ifdef _DEBUG
     Serial.print( "Mode set to ");
     Serial.print( shiftMode);
     #endif
   }  
   if( !modebutton && _rightPressed) _rightPressed = false;
+  if(modebutton){
+    _lastCommandReceived = t;
+    kbdEnable();
+  }
 }
 
 void EALIOR_Hardware::_readModeLeft( bool modebutton){
-  uint8_t modes[] =
+  const uint8_t modes[] =
       {_SHIFTMODE_LAT_SHIFTED, _SHIFTMODE_LAT_CAPS, _SHIFTMODE_LAT_NORMAL, _SHIFTMODE_LAT_NORMAL, _SHIFTMODE_LAT_NORMAL,
        _SHIFTMODE_RUS_SHIFTED, _SHIFTMODE_RUS_CAPS, _SHIFTMODE_RUS_NORMAL, _SHIFTMODE_RUS_NORMAL, _SHIFTMODE_RUS_NORMAL};
-  if(modebutton){
-    _lastCommandReceived = millis();
-    _keyboardEnable();
-  }
+  long t = millis();
   if( modebutton && !_leftPressed){
     _leftPressed = true;
     shiftMode = modes[shiftMode];
+    if( t - _lastCommandReceived > DOUBLE_PRESS_TIMEOUT && 
+      (shiftMode % 5) == _SHIFTMODE_LAT_CAPS) shiftMode -= _SHIFTMODE_LAT_CAPS; 
     #ifdef _DEBUG
     Serial.print( "Mode set to ");
     Serial.print( shiftMode);
     #endif
   }  
   if( !modebutton && _leftPressed) _leftPressed = false;
+  if(modebutton){
+    _lastCommandReceived = t;
+    kbdEnable();
+  }
 }
 
-void EALIOR_Hardware::_keyboardDisable(){
+void EALIOR_Hardware::kbdDisable( bool force_sleep){
   if( _kbdSleeping) return;
   _kbdSleeping = true;
 
@@ -262,9 +275,12 @@ void EALIOR_Hardware::_keyboardDisable(){
   PLLCSR &= ~_BV(PLLE); 
   // Disable USB
   USBCON &= ~_BV(USBE); 
+  // Force processor to sleep
+  if( force_sleep)
+    LowPower.powerDown(SLEEP_500MS, ADC_OFF, BOD_OFF);
 }
 
-void EALIOR_Hardware::_keyboardEnable(){
+void EALIOR_Hardware::kbdEnable(){
   if( !_kbdSleeping) return;
   _kbdSleeping = false;
   USBDevice.attach();

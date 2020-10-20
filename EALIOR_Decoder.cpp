@@ -56,21 +56,40 @@ void EALIOR_Decoder::processKey(){
       case _RUSLAT_:
         //_host->kbdPress( _LEFT_SHIFT_); // Shifts are not needed with the AnySoftKeyboard
         _host->kbdPress( _LEFT_ALT_);
+        _host->kbdHold();
         _host->kbdWrite( ' ');
         _host->kbdRelease( _LEFT_ALT_);
         //_host->kbdRelease( _LEFT_SHIFT_);
+        _host->kbdHold();
+        break;
+      case _DISABLE_:
+        _host->kbdDisable( true);
+        break;
+      case _ENABLE_:
+        _host->kbdEnable();
+        break;
+      case _RELEASE_:
+        _host->kbdHold();
+        _host->kbdReleaseAll();
+        _host->kbdHold();
+        break;
+      case _DELAY_:
+        _host->kbdHold();
         break;
       case _LEFT_CTRL_ :
       case _LEFT_SHIFT_ :
       case _LEFT_ALT_ :
       case _LEFT_GUI_ :
         _host->kbdPress( code);
+        _host->kbdHold();
         break;
       case _RIGHT_CTRL_ :  
       case _RIGHT_SHIFT_ : 
       case _RIGHT_ALT_ : 
       case _RIGHT_GUI_ : 
+        _host->kbdHold();
         _host->kbdRelease( code-4);
+        _host->kbdHold();
         break;
       default:
         #ifdef _DEBUG

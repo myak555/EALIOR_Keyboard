@@ -17,6 +17,12 @@
 // tested on PC 1000 ms Ok
 #define KBD_WAKEUP_TIMEOUT 1000
 
+// double-pressing shift results in release capslock
+#define DOUBLE_PRESS_TIMEOUT 300
+
+// controls the wait upon a buttion press, e.g. after pressing Control or Shift
+#define BUTTON_PRESS_TIMEOUT 30
+
 //
 // Pin assignment
 //
@@ -43,9 +49,11 @@ class EALIOR_Hardware{
     void kbdWrite(char key);
     void kbdPrint(String s);
     void kbdRelease(char key);
-    
+    void kbdReleaseAll();
+    inline void kbdHold(){ delay( BUTTON_PRESS_TIMEOUT);};
+    void kbdDisable( bool force_sleep=false);
+    void kbdEnable();
     void checkSleepRequired();
-
   private:
     int8_t _EALIORPins[8] = {_EALIOR_KEY_0_, _EALIOR_KEY_1_, _EALIOR_KEY_2_,
                              _EALIOR_KEY_3_, _EALIOR_KEY_4_, _EALIOR_KEY_5_,
@@ -79,8 +87,6 @@ class EALIOR_Hardware{
         return (digitalRead( _EALIORPins[i]) == LOW)? 1: 0;};
     inline int8_t _readPinBool( int i){
         return digitalRead( _EALIORPins[i]) == LOW;};
-    void _keyboardDisable();
-    void _keyboardEnable();
 };
 
 #endif // _EALIOR_HARDWARE_HPP

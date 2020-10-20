@@ -2348,7 +2348,7 @@ shape ( 780, 960, 35, 35,rectangle,3,000000,FFFFFF)
 shape ( 780, 1000, 35, 35,rectangle,3,000000,50505F)
 label ( 740,1040,38,35,nana,20,000000,FFFFFF)
 	lSize = 0
-	text =-
+	text =_
 
 shape ( 880, 920, 35, 35,rectangle,3,000000,FFFFFF)
 shape ( 880, 960, 35, 35,rectangle,3,000000,50505F)
@@ -2376,9 +2376,9 @@ shape ( 40, 1200, 35, 35,rectangle,3,000000,FFFFFF)
 shape ( 80, 1120, 35, 35,rectangle,3,000000,50505F)
 shape ( 80, 1160, 35, 35,rectangle,3,000000,FFFFFF)
 shape ( 80, 1200, 35, 35,rectangle,3,000000,50505F)
-label ( 40,1242,90,30,nana,14,000000,FFFFFF)
+label ( 40,1242,76,30,nana,14,000000,FFFFFF)
 	lSize = 2
-	text =undef
+	text =esc 
 
 shape ( 180, 1120, 35, 35,rectangle,3,000000,50505F)
 shape ( 180, 1160, 35, 35,rectangle,3,000000,FFFFFF)
@@ -2386,9 +2386,9 @@ shape ( 180, 1200, 35, 35,rectangle,3,000000,FFFFFF)
 shape ( 220, 1120, 35, 35,rectangle,3,000000,50505F)
 shape ( 220, 1160, 35, 35,rectangle,3,000000,FFFFFF)
 shape ( 220, 1200, 35, 35,rectangle,3,000000,50505F)
-label ( 180,1242,90,30,nana,14,000000,FFFFFF)
+label ( 180,1242,118,30,nana,14,000000,FFFFFF)
 	lSize = 2
-	text =undef
+	text =SoftKbd
 
 shape ( 320, 1120, 35, 35,rectangle,3,000000,FFFFFF)
 shape ( 320, 1160, 35, 35,rectangle,3,000000,50505F)
@@ -2428,7 +2428,7 @@ shape ( 780, 1160, 35, 35,rectangle,3,000000,FFFFFF)
 shape ( 780, 1200, 35, 35,rectangle,3,000000,50505F)
 label ( 740,1242,76,30,nana,14,000000,FFFFFF)
 	lSize = 2
-	text = ins
+	text = del
 
 shape ( 880, 1120, 35, 35,rectangle,3,000000,FFFFFF)
 shape ( 880, 1160, 35, 35,rectangle,3,000000,50505F)
@@ -3001,7 +3001,7 @@ shape ( 780, 960, 35, 35,rectangle,3,000000,FFFFFF)
 shape ( 780, 1000, 35, 35,rectangle,3,000000,50505F)
 label ( 740,1040,38,35,nana,20,000000,FFFFFF)
 	lSize = 0
-	text =-
+	text =_
 
 shape ( 880, 920, 35, 35,rectangle,3,000000,FFFFFF)
 shape ( 880, 960, 35, 35,rectangle,3,000000,50505F)
@@ -3029,9 +3029,9 @@ shape ( 40, 1200, 35, 35,rectangle,3,000000,FFFFFF)
 shape ( 80, 1120, 35, 35,rectangle,3,000000,50505F)
 shape ( 80, 1160, 35, 35,rectangle,3,000000,FFFFFF)
 shape ( 80, 1200, 35, 35,rectangle,3,000000,50505F)
-label ( 40,1242,90,30,nana,14,000000,FFFFFF)
+label ( 40,1242,76,30,nana,14,000000,FFFFFF)
 	lSize = 2
-	text =undef
+	text =esc 
 
 shape ( 180, 1120, 35, 35,rectangle,3,000000,50505F)
 shape ( 180, 1160, 35, 35,rectangle,3,000000,FFFFFF)
@@ -4307,7 +4307,7 @@ shape ( 780, 960, 35, 35,rectangle,3,000000,FFFFFF)
 shape ( 780, 1000, 35, 35,rectangle,3,000000,50505F)
 label ( 740,1040,38,35,nana,20,000000,FFFFFF)
 	lSize = 0
-	text =-
+	text =_
 
 shape ( 880, 920, 35, 35,rectangle,3,000000,FFFFFF)
 shape ( 880, 960, 35, 35,rectangle,3,000000,50505F)
@@ -5613,7 +5613,7 @@ shape ( 780, 960, 35, 35,rectangle,3,000000,FFFFFF)
 shape ( 780, 1000, 35, 35,rectangle,3,000000,50505F)
 label ( 740,1040,38,35,nana,20,000000,FFFFFF)
 	lSize = 0
-	text =-
+	text =_
 
 shape ( 880, 920, 35, 35,rectangle,3,000000,FFFFFF)
 shape ( 880, 960, 35, 35,rectangle,3,000000,50505F)
@@ -5641,9 +5641,9 @@ shape ( 40, 1200, 35, 35,rectangle,3,000000,FFFFFF)
 shape ( 80, 1120, 35, 35,rectangle,3,000000,50505F)
 shape ( 80, 1160, 35, 35,rectangle,3,000000,FFFFFF)
 shape ( 80, 1200, 35, 35,rectangle,3,000000,50505F)
-label ( 40,1242,104,30,nana,14,000000,FFFFFF)
-	lSize = 0
-	text =неопр.
+label ( 40,1242,90,30,nana,14,000000,FFFFFF)
+	lSize = 2
+	text =Выход
 
 shape ( 180, 1120, 35, 35,rectangle,3,000000,50505F)
 shape ( 180, 1160, 35, 35,rectangle,3,000000,FFFFFF)
@@ -5651,9 +5651,9 @@ shape ( 180, 1200, 35, 35,rectangle,3,000000,FFFFFF)
 shape ( 220, 1120, 35, 35,rectangle,3,000000,50505F)
 shape ( 220, 1160, 35, 35,rectangle,3,000000,FFFFFF)
 shape ( 220, 1200, 35, 35,rectangle,3,000000,50505F)
-label ( 180,1242,104,30,nana,14,000000,FFFFFF)
-	lSize = 0
-	text =неопр.
+label ( 180,1242,118,30,nana,14,000000,FFFFFF)
+	lSize = 2
+	text =СофтКбд
 
 shape ( 320, 1120, 35, 35,rectangle,3,000000,FFFFFF)
 shape ( 320, 1160, 35, 35,rectangle,3,000000,50505F)
@@ -5662,7 +5662,7 @@ shape ( 360, 1120, 35, 35,rectangle,3,000000,50505F)
 shape ( 360, 1160, 35, 35,rectangle,3,000000,FFFFFF)
 shape ( 360, 1200, 35, 35,rectangle,3,000000,50505F)
 label ( 320,1242,104,30,nana,14,000000,FFFFFF)
-	lSize = 0
+	lSize = 2
 	text =неопр.
 
 shape ( 460, 1120, 35, 35,rectangle,3,000000,50505F)
@@ -6266,7 +6266,7 @@ shape ( 780, 960, 35, 35,rectangle,3,000000,FFFFFF)
 shape ( 780, 1000, 35, 35,rectangle,3,000000,50505F)
 label ( 740,1040,38,35,nana,20,000000,FFFFFF)
 	lSize = 0
-	text =-
+	text =_
 
 shape ( 880, 920, 35, 35,rectangle,3,000000,FFFFFF)
 shape ( 880, 960, 35, 35,rectangle,3,000000,50505F)
@@ -6294,9 +6294,9 @@ shape ( 40, 1200, 35, 35,rectangle,3,000000,FFFFFF)
 shape ( 80, 1120, 35, 35,rectangle,3,000000,50505F)
 shape ( 80, 1160, 35, 35,rectangle,3,000000,FFFFFF)
 shape ( 80, 1200, 35, 35,rectangle,3,000000,50505F)
-label ( 40,1242,104,30,nana,14,000000,FFFFFF)
-	lSize = 0
-	text =неопр.
+label ( 40,1242,90,30,nana,14,000000,FFFFFF)
+	lSize = 2
+	text =Выход
 
 shape ( 180, 1120, 35, 35,rectangle,3,000000,50505F)
 shape ( 180, 1160, 35, 35,rectangle,3,000000,FFFFFF)
@@ -6305,7 +6305,7 @@ shape ( 220, 1120, 35, 35,rectangle,3,000000,50505F)
 shape ( 220, 1160, 35, 35,rectangle,3,000000,FFFFFF)
 shape ( 220, 1200, 35, 35,rectangle,3,000000,50505F)
 label ( 180,1242,104,30,nana,14,000000,FFFFFF)
-	lSize = 0
+	lSize = 2
 	text =неопр.
 
 shape ( 320, 1120, 35, 35,rectangle,3,000000,FFFFFF)
@@ -6315,7 +6315,7 @@ shape ( 360, 1120, 35, 35,rectangle,3,000000,50505F)
 shape ( 360, 1160, 35, 35,rectangle,3,000000,FFFFFF)
 shape ( 360, 1200, 35, 35,rectangle,3,000000,50505F)
 label ( 320,1242,104,30,nana,14,000000,FFFFFF)
-	lSize = 0
+	lSize = 2
 	text =неопр.
 
 shape ( 460, 1120, 35, 35,rectangle,3,000000,50505F)

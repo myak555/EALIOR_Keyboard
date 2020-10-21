@@ -151,7 +151,7 @@ class EALIOR_Keyboard():
         s = s[:-1] + "};\n\n"
         lc = 0
         s += "const byte _EALIOR_Addresses[] PROGMEM = {\n\t"
-        for i, b in enumerate(self.AddressSequence):
+        for b in self.AddressSequence:
             s += "0x{:02x},".format(b)
             lc += 1
             if lc >= 20:

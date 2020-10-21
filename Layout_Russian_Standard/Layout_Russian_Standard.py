@@ -69,7 +69,7 @@ class ArduinoKeyConverter():
         return
     def StartsWithMeta( self, s):
         self.meta = None
-        for i, t in enumerate(self.conversion):
+        for t in self.conversion:
             if not s.startswith( t[0]): continue
             self.meta = t
             return True
@@ -141,7 +141,7 @@ class EALIOR_Keyboard():
     def __str__(self):
         lc = 0
         s = "const byte _EALIOR_Mantras[] PROGMEM = {\n\t"
-        for i, b in enumerate(self.ByteSequence):
+        for b in self.ByteSequence:
             s += "0x{:02x},".format(b)
             lc += 1
             if lc >= 20:

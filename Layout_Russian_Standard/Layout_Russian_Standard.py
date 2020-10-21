@@ -1,3 +1,8 @@
+#
+# This layout implements a standard Russian ЙЦУКЕН keyboard for use with Android
+# Tested with AnySoftKeyboard
+#
+
 import struct
 
 def printEncoded( f, s):
